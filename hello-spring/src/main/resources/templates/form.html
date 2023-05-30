@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Table Example</title>
+    <link th:href="@{/grade-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+<h1>Form Example</h1>
+<form method="post" th:object="${grade}" th:action="@{/handleSubmit}">
+    <input type="text" th:field="*{name}" placeholder="Name">
+    <input type="text" th:field="*{subject}" placeholder="Subject">
+    <input type="text" th:field="*{score}" placeholder="Score">
+    <input type="submit" value="Submit">
+</form>
+</tbody>
+
+</body>
+</html>

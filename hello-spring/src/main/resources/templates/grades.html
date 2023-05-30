@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Table Example</title>
+    <link th:href="@{/grade-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+<h1>Table Example</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Score</th>
+        <th>Condition</th>
+        <th>Comment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--    How to pass an object and get its value-->
+    <tr th:object="${grade}">
+        <td th:text="*{getName()}"></td>
+        <td th:text="*{getSubject()}"></td>
+        <td th:text="*{getScore()}"></td>
+        <td th:if="*{getName()=='Ishx'}">Condition matched</td>
+        <td th:unless="*{getName()=='Ishx'}">Condition not matched</td>
+        <td th:text="*{getScore()>0} ? 'Good score':'Not good score'">Condition not matched</td>
+    </tr>
+</table>
+<!--How to use switch-->
+<div th:switch="${grade.getSubject()}">
+    <p th:case="'potions'">Snape</p>
+    <p th:case="'darkarts'">Harry</p>
+    <p th:case="*">Some random subject</p>
+</div>
+<div>
+    <h1>Using Utility Methods</h1>
+    <p th:text="${#strings.contains(someText,'real')}"></p>
+    <p th:text="${#strings.contains(someText,'cat')}"></p>
+</div>
+</tbody>
+<button type="button">Click me!</button>
+</body>
+</html>

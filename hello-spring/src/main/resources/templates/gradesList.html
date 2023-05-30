@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Table Example</title>
+    <link th:href="@{/grade-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+<h1>Table Example</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Score</th>
+        <th>Condition</th>
+        <th>Comment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--    How to pass an object and get its value-->
+    <tr th:each="grade:${grades}">
+        <td th:text="${grade.getName()}"></td>
+        <td th:text="${grade.getSubject()}"></td>
+        <td th:text="${grade.getScore()}"></td>
+        <td th:if="${grade.getName()=='Ishx'}">Condition matched</td>
+        <td th:unless="${grade.getName()=='Ishx'}">Condition not matched</td>
+        <td th:text="${grade.getScore()>0} ? 'Good score':'Not good score'">Condition not matched</td>
+        <td><a role="button" class="update">Update</a></td>
+    </tr>
+</table>
+</tbody>
+<button type="button">Click me!</button>
+</body>
+</html>
