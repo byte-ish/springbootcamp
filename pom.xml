@@ -13,6 +13,7 @@
 
     <modules>
         <module>hello-spring</module>
+        <module>grade-submission</module>
     </modules>
     <groupId>com.learn</groupId>
     <artifactId>springbootcamp</artifactId>

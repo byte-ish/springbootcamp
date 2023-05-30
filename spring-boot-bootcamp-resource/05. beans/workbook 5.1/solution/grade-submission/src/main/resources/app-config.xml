@@ -7,6 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="gradeRepository" class="com.ltp.gradesubmission.repository.GradeRepository"> </bean>
-	<bean id="gradeService" class="com.ltp.gradesubmission.service.GradeService"> </bean>
+	<bean id="gradeRepository" class="repository.com.learn.gradesubmission.GradeRepository"> </bean>
+	<bean id="gradeService" class="service.com.learn.gradesubmission.GradeService"> </bean>
 </beans>
